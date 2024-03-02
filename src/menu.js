@@ -18,14 +18,7 @@ export default function menuPageLoad() {
     gap: 2rem;
     align-items: center;    
     `;
-    const menuTitle = document.createElement('h1');
-    menuTitle.textContent = 'Our Menu';
-    menuTitle.style = `
-    text-align: center;
-    margin: 0;
-    margin-top: 2rem;
-    padding: 0;
-    `;
+
     const menuList = document.createElement('div');
     menuList.id = 'menu-list';
     menuList.style = `
@@ -33,7 +26,7 @@ export default function menuPageLoad() {
     justify-content: space-around;
     gap: 2rem;
     padding: 1rem;
-    margin: 0;
+    margin: 5rem 0 0 0;
     `;
 
     const menuItems = [
@@ -81,7 +74,6 @@ export default function menuPageLoad() {
         menuItem.appendChild(menuItemTitle);
         menuList.appendChild(menuItem);
     });
-    menu.appendChild(menuTitle);
     menu.appendChild(menuList);
     content.appendChild(menu);
 }
