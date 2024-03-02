@@ -1,4 +1,4 @@
-import restaurantImage from './restaurant4k.jpg';
+import restaurantImage from './food-wallpaper.jpg';
 
 
 
@@ -9,37 +9,41 @@ export default function homePageLoad() {
     home.style = `
     flex: 1;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: black;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.4);
+
     `;
+
+    const img = document.createElement('img');
+    img.src = restaurantImage;
+    img.style = `
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    `;
+
 
     const title = document.createElement('h1');
     title.textContent = 'Welcome to our restaurant!';
 
-    const img = document.createElement('img');
-    img.src = restaurantImage;
-    img.alt = 'restaurant';
-
-    img.style.width = '70%';
-    img.style.height = 'auto';
-
-
-    const p = document.createElement('p');
-    p.textContent = 'We serve the best food in town!';
+    title.style = `
+    text-align: center;
+    margin: 0;
+    margin-top: 2rem;
+    padding: 0;
+    color: white;
+    font-size: 3rem;
+    `;
     
-    p.style.color = 'white';
-    p.style.fontSize = '1rem';
-    p.style.textAlign = 'center';
-
-    title.style.color = 'white';
-    // title.style.fontSize = '2rem';
-    title.style.textAlign = 'center';
-    
-    home.appendChild(title);
     home.appendChild(img);
-    home.appendChild(p);
+    home.appendChild(title);
     
     content.appendChild(home);
 }

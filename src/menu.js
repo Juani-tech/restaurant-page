@@ -1,3 +1,9 @@
+import tacos from './tacos.jpg';
+import pizza from './pizza.jpeg';
+import hamburguesa from './hamburguesa.jpg';
+import sorrentinos from './sorrentinos.jpeg';
+
+
 export default function menuPageLoad() {
     const content = document.getElementById('content');
     const menu = document.createElement('div');
@@ -20,10 +26,10 @@ export default function menuPageLoad() {
     margin-top: 2rem;
     padding: 0;
     `;
-    const menuList = document.createElement('ul');
+    const menuList = document.createElement('div');
     menuList.style = `
-    list-style-type: none;
     display: grid;
+    grid-template: auto / repeat(2, 1fr);
     gap: 2rem;
     font-size: 1.5rem;
     padding: 0;
@@ -31,15 +37,41 @@ export default function menuPageLoad() {
     `;
 
     const menuItems = [
+        'Tacos',
+        'Burgers',
         'Pizza',
-        'Pasta',
-        'Burger',
-        'Sandwich',
-        'Salad',
-        'Dessert'
+        'Sorrentinos'
     ];
     menuItems.forEach(item => {
-        const menuItem = document.createElement('li');
+        const menuItem = document.createElement('div');
+        menuItem.style = `
+        position: relative;
+        width: 100%;
+        height: 300px;
+        `;
+        const img = document.createElement('img');
+        switch (item) {
+            case "Tacos":
+                img.src = tacos;
+                break;
+            case "Burgers":
+                img.src = hamburguesa;
+                break;
+            case "Pizza":
+                img.src = pizza;
+                break;
+            case "Sorrentinos":
+                img.src = sorrentinos;
+                break;
+            default:
+                break;
+        }
+        img.style = `
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        `;
+        menuItem.appendChild(img);
         menuItem.textContent = item;
         menuList.appendChild(menuItem);
     });
