@@ -1,21 +1,35 @@
 export default function menuPageLoad() {
     const content = document.getElementById('content');
     const menu = document.createElement('div');
-
+    
+    menu.id = 'menu';
     menu.style = `
+    flex: 1;
     background-color: black;
     color: white;
-    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;    
     `;
-    menu.id = 'menu';
     const menuTitle = document.createElement('h1');
     menuTitle.textContent = 'Our Menu';
     menuTitle.style = `
     text-align: center;
+    margin: 0;
+    margin-top: 2rem;
+    padding: 0;
+    `;
+    const menuList = document.createElement('ul');
+    menuList.style = `
+    list-style-type: none;
+    display: grid;
+    gap: 2rem;
+    font-size: 1.5rem;
     padding: 0;
     margin: 0;
     `;
-    const menuList = document.createElement('ul');
+
     const menuItems = [
         'Pizza',
         'Pasta',

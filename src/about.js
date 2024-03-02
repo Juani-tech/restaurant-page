@@ -2,6 +2,17 @@ export default function aboutPageLoad() {
     const content = document.getElementById('content');
     const about = document.createElement('div');
     about.id = 'about';
+    about.style = `
+    flex: 1;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;    
+    `;
+    
+
     const aboutTitle = document.createElement('h1');
     aboutTitle.textContent = 'About Us';
     const aboutText = document.createElement('p');
