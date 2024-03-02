@@ -28,6 +28,9 @@ export default function aboutPageLoad() {
     `;
     const aboutText = document.createElement('p');
     aboutText.textContent = 'We are a small restaurant located in the heart of the city. We serve the best food in town and have a variety of dishes to choose from. We are open every day from 11am to 11pm. We hope to see you soon!';
+    aboutText.style = `
+    text-align: center;
+    `;
 
     const emailText = document.createElement('p');
     emailText.textContent = 'Make your reservation via E-mail';
