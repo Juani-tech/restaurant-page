@@ -27,12 +27,12 @@ export default function menuPageLoad() {
     padding: 0;
     `;
     const menuList = document.createElement('div');
+    menuList.id = 'menu-list';
     menuList.style = `
-    display: grid;
-    grid-template: auto / repeat(2, 1fr);
+    display: flex;
+    justify-content: space-around;
     gap: 2rem;
-    font-size: 1.5rem;
-    padding: 0;
+    padding: 1rem;
     margin: 0;
     `;
 
@@ -45,9 +45,8 @@ export default function menuPageLoad() {
     menuItems.forEach(item => {
         const menuItem = document.createElement('div');
         menuItem.style = `
-        position: relative;
-        width: 100%;
-        height: 300px;
+        flex: 1;
+        justify-content: space-around;
         `;
         const img = document.createElement('img');
         switch (item) {
@@ -70,9 +69,16 @@ export default function menuPageLoad() {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        border-radius: 1rem;
+
+        `;
+        const menuItemTitle = document.createElement('h2');
+        menuItemTitle.textContent = item;
+        menuItemTitle.style = `
+        text-align: center;
         `;
         menuItem.appendChild(img);
-        menuItem.textContent = item;
+        menuItem.appendChild(menuItemTitle);
         menuList.appendChild(menuItem);
     });
     menu.appendChild(menuTitle);
